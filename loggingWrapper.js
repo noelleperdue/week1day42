@@ -1,10 +1,14 @@
 var wrapLog = function (callback, name) {
-  var parameters =
+
+  return function() {
+  var sum = arguments[0] + arguments[1];
+ // const amount =
+ console.log(`${name}(${arguments[0]},${arguments[1]}) => ${sum}`);
+}
 };
 
 var sum = function (a,b) { return a + b; };
 var logSum = wrapLog(sum, "sum");
-
 logSum(5,3); // sum(5,3) => 8
 logSum(3,2); // sum(3,2) => 5
 
